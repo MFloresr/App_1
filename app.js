@@ -18,19 +18,21 @@ var BotonClear = document.createElement('input');
     divContainer.appendChild(BotonClear);
 
 List.prototype.addTable = function () {
-    var tabla = document.createElement('table');
     var divResultado = document.getElementById('resultado');
-
-    divResultado.appendChild(tabla);
-    for (var i= 0; i < milista.listsize; i++) {
-        
+    divResultado.innerHTML = "";
+    var tabla = document.createElement('table');
     
+    divResultado.appendChild(tabla);
+    for (var i= 0; i < this.listSize; i++) {
+       
         var tr = document.createElement('tr');
-        var tr = document.createElement('td');
-        td.innerHTML = 'HOLA'; //CANVIAR HOLA
+        var td = document.createElement('td');
         tabla.appendChild(tr);
         tr.appendChild(td);
+        td.innerHTML = this.getElement(i); //CANVIAR HOLA
     }
+
+    tabla.setAttribute('border', '2');
 }
 
 List.prototype.removeId = function (id) {
@@ -40,8 +42,10 @@ List.prototype.removeId = function (id) {
 
 BotonAdd.addEventListener('click', capturarDatos);
 
+
 function capturarDatos() {
     var miTexto = document.getElementById('texto').value;
     milista.append(miTexto);
+    milista.addTable();
 }
 
