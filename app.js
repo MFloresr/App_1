@@ -1,6 +1,5 @@
 var milista = new List();
 var divContainer = document.getElementById('container');
-var divResultado = document.getElementById('resultado');
 
 var TextoDeArea = document.createElement('textarea');
     TextoDeArea.type ='textarea';
@@ -20,14 +19,17 @@ var BotonClear = document.createElement('input');
 
 List.prototype.addTable = function () {
     var tabla = document.createElement('table');
+    var divResultado = document.getElementById('resultado');
+
     divResultado.appendChild(tabla);
     for (var i= 0; i < milista.listsize; i++) {
         
     
-    var tr = document.createElement('tr')
-    var tr = document.createElement('td')
-    divResultado.tabla.appendChild(tr);
-    divResultado.tabla.appendChild(td);
+        var tr = document.createElement('tr');
+        var tr = document.createElement('td');
+        td.innerHTML = 'HOLA'; //CANVIAR HOLA
+        tabla.appendChild(tr);
+        tr.appendChild(td);
     }
 }
 
