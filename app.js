@@ -7,15 +7,15 @@ var TextoDeArea = document.createElement('textarea');
     TextoDeArea.setAttribute('id','texto')
     divContainer.appendChild(TextoDeArea);
 
-var BotonAdd = document.createElement('input');
-    BotonAdd.type = 'button';
-    BotonAdd.value = 'Agregar';
-    divContainer.appendChild(BotonAdd);
+var botonAdd = document.createElement('input');
+    botonAdd.type = 'button';
+    botonAdd.value = 'Agregar';
+    divContainer.appendChild(botonAdd);
 
-var BotonClear = document.createElement('input');
-    BotonClear.type = 'button';
-    BotonClear.value = 'Limpiar';
-    divContainer.appendChild(BotonClear);
+var botonClear = document.createElement('input');
+    botonClear.type = 'button';
+    botonClear.value = 'Limpiar';
+    divContainer.appendChild(botonClear);
 
 List.prototype.addTable = function () {
     var divResultado = document.getElementById('resultado');
@@ -29,7 +29,7 @@ List.prototype.addTable = function () {
         var td = document.createElement('td');
         tabla.appendChild(tr);
         tr.appendChild(td);
-        td.innerHTML = this.getElement(i); //CANVIAR HOLA
+        td.innerHTML = this.getElement(i); 
     }
 
     tabla.setAttribute('border', '2');
@@ -40,8 +40,6 @@ List.prototype.removeId = function (id) {
     --this.pos;
 }
 
-BotonAdd.addEventListener('click', capturarDatos);
-
 
 function capturarDatos() {
     var miTexto = document.getElementById('texto').value;
@@ -49,3 +47,14 @@ function capturarDatos() {
     milista.addTable();
 }
 
+function borrartabla() {
+    milista.clear;
+    var borrarTabla = document.getElementById(tableID);
+    while(borrarTabla.hasChildNodes())
+    {
+        Parent.removeChild(Parent.firstChild);
+    }
+}//revisar codigo 
+
+botonAdd.addEventListener('click', capturarDatos);
+botonClear.addEventListener('click', borrartabla);
