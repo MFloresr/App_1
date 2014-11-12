@@ -3,7 +3,6 @@ var divContainer = document.getElementById('container');
 
 var TextoDeArea = document.createElement('textarea');
     TextoDeArea.type ='textarea';
-   // TextoDeArea.idName = 'texto';
     TextoDeArea.setAttribute('id','texto')
     divContainer.appendChild(TextoDeArea);
 
@@ -18,19 +17,34 @@ var botonClear = document.createElement('input');
     divContainer.appendChild(botonClear);
 
 List.prototype.addTable = function () {
+	var that = this;
     var divResultado = document.getElementById('resultado');
     divResultado.innerHTML = "";
     var tabla = document.createElement('table');
-    
     divResultado.appendChild(tabla);
+    this.front();
     for (var i= 0; i < this.listSize; i++) {
        
         var tr = document.createElement('tr');
-        var td = document.createElement('td');
+        var td1 = document.createElement('td');
+        var td2 = document.createElement('td');
+        var td3 = document.createElement('td');
         tabla.appendChild(tr);
-        tr.appendChild(td);
-        td.innerHTML = this.getElement(i); 
+        tr.appendChild(td1);
+        tr.appendChild(td2);
+        tr.appendChild(td3);
+        td1.innerHTML = i+1;
+        td2.innerHTML = this.getElement(i);
+     	var botonIndividual = document.createElement('button');
+     	botonIndividual.innerHTML = "X";
+     	td3.appendChild(botonIndividual);
+     	botonIndividual.addEventListener('click',function() {
+     		that.removeId(i);
+     		that.addTable();
+     	});
+        this.next();
     }
+
 
     tabla.setAttribute('border', '2');
 }
@@ -48,13 +62,10 @@ function capturarDatos() {
 }
 
 function borrartabla() {
-    milista.clear;
-    var borrarTabla = document.getElementById(tableID);
-    while(borrarTabla.hasChildNodes())
-    {
-        Parent.removeChild(Parent.firstChild);
-    }
-}//revisar codigo 
+    var divResultado = document.getElementById('resultado');
+    divResultado.innerHTML = " ";
+    milista.clear();
+}
 
 botonAdd.addEventListener('click', capturarDatos);
 botonClear.addEventListener('click', borrartabla);
