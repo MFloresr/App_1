@@ -15,7 +15,7 @@ var botonAdd = document.createElement('input');
 var botonClear = document.createElement('input');
     botonClear.setAttribute('type','button');
     botonClear.setAttribute('value','Limpiar');
-    botonClear.setAttribute('id','botnoLimpiar');
+    botonClear.setAttribute('id','botonLimpiar');
     divContainer.appendChild(botonClear);
 
 List.prototype.addTable = function () {
@@ -25,7 +25,7 @@ List.prototype.addTable = function () {
     var tabla = document.createElement('table');
     divResultado.appendChild(tabla);
     this.front();
-    for (var i= 0; i < this.listSize; i++) {
+    this.dataStore.forEach( function(e,i) {
        
         var tr = document.createElement('tr');
         var td1 = document.createElement('td');
@@ -36,7 +36,7 @@ List.prototype.addTable = function () {
         tr.appendChild(td2);
         tr.appendChild(td3);
         td1.innerHTML = i+1;
-        td2.innerHTML = this.getElement(i);
+        td2.innerHTML = e; //this.getElement(i);
      	var botonIndividual = document.createElement('button');
      	botonIndividual.innerHTML = "Eliminiar";
      	td3.appendChild(botonIndividual);
@@ -44,11 +44,7 @@ List.prototype.addTable = function () {
      		that.removeId(i);
      		that.addTable();
      	});
-        this.next();
-    }
-
-
-    tabla.setAttribute('border', '2');
+    });
 }
 
 List.prototype.removeId = function (id) {
@@ -67,6 +63,9 @@ function borrartabla() {
     var divResultado = document.getElementById('resultado');
     divResultado.innerHTML = " ";
     milista.clear();
+
+    var TextoDeArea = document.getElementById('texto');
+    TextoDeArea.value = '';
 }
 
 botonAdd.addEventListener('click', capturarDatos);
