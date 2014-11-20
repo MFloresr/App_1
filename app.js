@@ -2,18 +2,20 @@ var milista = new List();
 var divContainer = document.getElementById('container');
 
 var TextoDeArea = document.createElement('textarea');
-    TextoDeArea.type ='textarea';
-    TextoDeArea.setAttribute('id','texto')
+    TextoDeArea.setAttribute('type','textarea');
+    TextoDeArea.setAttribute('id','texto');
     divContainer.appendChild(TextoDeArea);
 
 var botonAdd = document.createElement('input');
-    botonAdd.type = 'button';
-    botonAdd.value = 'Agregar';
+    botonAdd.setAttribute('type','button');
+    botonAdd.setAttribute('value','Agregar');
+    botonAdd.setAttribute('id','botonEnviar');
     divContainer.appendChild(botonAdd);
 
 var botonClear = document.createElement('input');
-    botonClear.type = 'button';
-    botonClear.value = 'Limpiar';
+    botonClear.setAttribute('type','button');
+    botonClear.setAttribute('value','Limpiar');
+    botonClear.setAttribute('id','botnoLimpiar');
     divContainer.appendChild(botonClear);
 
 List.prototype.addTable = function () {
@@ -36,7 +38,7 @@ List.prototype.addTable = function () {
         td1.innerHTML = i+1;
         td2.innerHTML = this.getElement(i);
      	var botonIndividual = document.createElement('button');
-     	botonIndividual.innerHTML = "X";
+     	botonIndividual.innerHTML = "Eliminiar";
      	td3.appendChild(botonIndividual);
      	botonIndividual.addEventListener('click',function() {
      		that.removeId(i);

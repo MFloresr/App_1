@@ -1,0 +1,79 @@
+body {
+	text-align: center;
+	background-color: #2BD79F;
+}
+
+h1{
+	border:solid 2px;
+	border-color:red;
+    width:40%;
+    margin:auto;
+    margin-top: 20px;
+    text-align: center;
+    background-color: #3EAD89;
+    color: #2BD79F;
+}
+#container{
+	margin: 2% auto 0 auto;
+    border:solid 2px;
+    width: 50%;
+	text-align: center;
+	background-color: #3EAD89;
+	padding-top: 1%;
+	padding-bottom: 1%;
+
+}
+#container textarea{
+	border: solid 1px;
+	text-align: center;
+	padding: 3% 17.8% 2% 17.8%;
+	margin: auto auto auto auto;
+	color: red;
+}
+
+
+#botonEnviar {
+	margin: 1% auto auto auto;
+	display: block;
+	padding: 1% 17.8% 1% 17.8%;
+	width:52.5%;
+	background: #3e9cbf; 
+	border:1px solid #3e9cbf;
+	cursor:pointer;
+	font-size:175%;
+	font-family:Oswald, sans-serif; 
+	letter-spacing:150%;
+	color: #fff;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+}
+
+#botonEnviar:hover, #botonEnviar:focus {
+	color:#dfe7ea;
+	background: red; 
+}
+
+#resultado{
+	margin: 1% auto 0 auto;
+    border:solid 2px;
+    width: 50%;
+	text-align: center;
+	background-color: #3EAD89; 
+}
+
+#resultado table{
+	border: solid 1px;
+	text-align: center;
+	padding: 1% 30% 1% 30%;
+	margin: 1% auto 1% auto;
+	background-color: #fff;
+}
+
+ td{
+	border: solid 1px red;
+	text-align: center;
+	padding: 1% 50% 1% 30%;
+	margin: 1% auto 1% auto;
+	background-color: #000;
+}
